@@ -19,6 +19,14 @@ cd ./infrastructure
 bash start.sh
 ```
 
+I have changed `./infrastructure/start.sh` to reference `./infrastructure/common.yml` correctly.
+
+I have added `missions` table with foreign key attribute `shipId` which reference to the `id` column in `ships` table.
+
+Made changes to `./helpers/populate.ts` script so it returns the UUIDs for the ships which can later be used as foreign keys for rows in `missions` table
+
+Also made changes to graphql query so as to return the array of missions related to a ship
+
 ## :dizzy: Deployment
 
 When deploying a project, add the following secrets to your repo settings (under secrets actions) and any project dependant secrets to AWS Systems Manager:
